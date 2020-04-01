@@ -12,9 +12,9 @@ public class Controller {
     private static ApplicationContext context = new AnnotationConfigApplicationContext(Context.class);
 
     @RequestMapping(value = "/language")
-    public String getLanguage(String language) {
+    public Language getLanguage(String language) {
         LanguageGiver languageGiver = context.getBean(LanguageGiver.class);
-        return "\"" + languageGiver.read(language) + "\"";
+        return languageGiver.read(language);
     }
 
     @RequestMapping(value = "/getAll")

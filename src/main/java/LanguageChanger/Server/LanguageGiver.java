@@ -13,9 +13,9 @@ public class LanguageGiver {
         mapper = new ObjectMapper();
     }
 
-    public String read(String language) {
+    public Language read(String language) {
         try {
-            return mapper.readValue(new File("Languages/" + language + ".json"), String.class);
+            return mapper.readValue(new File("Languages/" + language + ".json"), Language.class);
         } catch (IOException e) {
 //            e.printStackTrace();
             return null;
